@@ -29,7 +29,10 @@ app.post('/burger', (req, res) => Burger.create(req.body)
   .then(() => res.sendStatus(200))
   .catch(e => console.error(e)))
 
-
+app.put('/burger', (req, res) => {
+  Burger.update({ eaten: req.body.eaten }, { where: { id: req.body.id } })
+    .then(res.sendStatus(200))
+})
 
 
 require('./config').sync()
