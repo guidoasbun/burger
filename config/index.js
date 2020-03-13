@@ -13,6 +13,6 @@
 
 const Sequelize = require('sequelize')
 
-const sequelize = new Sequelize('mysql://root:Starfish1@localhost:3306/burger_db')
+const sequelize = new Sequelize(process.env.NODE_ENV === 'prodution' ? process.env.JAWSDB_URL : process.env.LOCAL_URL)
 
 module.exports = sequelize
