@@ -1,13 +1,15 @@
 require('dotenv').config()
 
+const morgan = require('morgan')
+
 const express = require('express')
 const path = require('path')
 const { join } = require('path')
 const app = express()
 const Burger = require('./models/burger.js')
 
-
 // Middleware
+app.use(morgan('tiny'))
 app.engine('jsx', require('express-react-views').createEngine())
 app.set('views', join(__dirname, 'views'))
 app.set('view engine', 'jsx')
