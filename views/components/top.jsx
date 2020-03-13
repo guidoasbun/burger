@@ -3,7 +3,7 @@ const React = require('react')
 const Top = props => {
   return (
     <div className="card text-center">
-      <img className="img-size " src="assets/images/burger.png" alt="hamburger"></img>
+      <img className="img-size " src="/assets/images/burger.png" alt="hamburger"></img>
       <form>
         <div>
           <label>Enter burger name</label>
