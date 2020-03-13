@@ -6,8 +6,8 @@ const Eaten = props => {
       <div className="alert alert-danger" role="alert">
         Hamburger eaten
             </div>
-      <ul className="list-group">
-        <li className="list-group-item">No Burgers to display yet</li>
+      <ul id="eatenlist"className="list-group">
+        {/* <li className="list-group-item">No Burgers to display yet</li> */}
       </ul>
     </div>
   )
