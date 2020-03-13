@@ -4,6 +4,7 @@ const renderNotEatenList = list => {
   .then((data) =>{
     let burgerDat = {}
     burgerDat = data.data
+    document.getElementById('notEatenlist').innerHTML = ''
     burgerDat.forEach(element => {
       if(element.eaten === false){
         const itemElem = document.createElement('li')
@@ -26,6 +27,7 @@ const renderEatenList = list => {
   .then((data) =>{
     let burgerDat = {}
     burgerDat = data.data
+    document.getElementById('eatenlist').innerHTML = ''
     burgerDat.forEach(element => {
       if(element.eaten === true){
         const itemElem = document.createElement('li')
@@ -38,7 +40,6 @@ const renderEatenList = list => {
   })
 }
 
-
 const createBurger = () => {
   document.getElementById('createBurger').addEventListener('click', event => {
     event.preventDefault()
@@ -47,10 +48,12 @@ const createBurger = () => {
       burgerName: document.getElementById('newBurgerName').value,
         eaten: false
       })
-      // .then(() => {
-      // })
+      .then(()=>{
+        renderNotEatenList()
+      })
       .catch(e => console.error(e))
   })
+  
 }
 
 renderEatenList()
@@ -59,7 +62,6 @@ createBurger()
 
 document.addEventListener('click', event => {
   event.target.classList.contains('items') ? updateBurger(event.target.id) : null
+  renderEatenList()
+  renderNotEatenList()
 })
-
-
-// document.addEventListener('click', event => event.target.classList.contains('Devour') ? devoureBurger(event.target) : null)
