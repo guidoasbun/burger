@@ -13,8 +13,7 @@ const Top = props => {
         </div>
       </form>
       <div className="card-body">
-        {/* <p className="card-text">Click on button to eat the burger.</p>
-        <button  type="button" className="btn btn-warning">Devour It</button> */}
+        
       </div>
     </div>
   )
